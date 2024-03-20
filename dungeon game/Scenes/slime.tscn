@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3 uid="uid://b3qoifkbilgrk"]
+
+[ext_resource type="Script" path="res://Scripts/slime.gd" id="1_5h41s"]
+[ext_resource type="Texture2D" uid="uid://cnilnwggxv6w7" path="res://Assets/Bitlands 1.0/Enemies/Slime/Idle_run_walk/Idle_run_walk.png" id="2_wjxna"]
+
+[node name="slime" type="CharacterBody2D"]
+script = ExtResource("1_5h41s")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, -8)
+texture = ExtResource("2_wjxna")
+hframes = 4

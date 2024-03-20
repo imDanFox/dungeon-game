@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://cs36x4y4gi5t"]
+
+[ext_resource type="Texture2D" uid="uid://deo5466mie8n8" path="res://Assets/Bitlands 1.0/Enemies/Bat/Idle/Idle_front_view.png" id="1_ced68"]
+
+[node name="bat" type="CharacterBody2D"]
+motion_mode = 1
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, -16)
+texture = ExtResource("1_ced68")
+hframes = 4

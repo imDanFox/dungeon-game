@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="Dropitem" load_steps=3 format=3 uid="uid://th3x3hrgmmbk"]
+
+[ext_resource type="Script" path="res://Drop Table/dropItem.gd" id="1_vkipk"]
+[ext_resource type="Texture2D" uid="uid://bvq6m4b2rcv72" path="res://Assets/Bitlands 1.0/Objects/Barrel_1.png" id="2_6geky"]
+
+[resource]
+script = ExtResource("1_vkipk")
+name = "barrel"
+texture = ExtResource("2_6geky")

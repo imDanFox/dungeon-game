@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://cb0pv3yas2ay6"]
+
+[ext_resource type="Texture2D" uid="uid://crklkp350mdab" path="res://Assets/Bitlands 1.0/Character/Idle/Idle_front_view.png" id="1_b6lle"]
+[ext_resource type="Script" path="res://Scripts/player.gd" id="1_c7tgt"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_i2bhw"]
+radius = 2.0
+height = 6.0
+
+[node name="Player" type="CharacterBody2D"]
+script = ExtResource("1_c7tgt")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, -3)
+scale = Vector2(0.453125, 0.453125)
+texture = ExtResource("1_b6lle")
+hframes = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -3)
+shape = SubResource("CapsuleShape2D_i2bhw")
