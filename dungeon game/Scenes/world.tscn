@@ -1,8 +1,10 @@
-[gd_scene load_steps=7 format=3 uid="uid://dtqho8gtfrwk"]
+[gd_scene load_steps=9 format=3 uid="uid://dtqho8gtfrwk"]
 
 [ext_resource type="Texture2D" uid="uid://c305lnv4pyakq" path="res://Assets/Dungeon tileset.png" id="1_dkkyg"]
 [ext_resource type="Texture2D" uid="uid://cdywojdpqews3" path="res://Assets/tileset layout for terrains.png" id="2_ffw8c"]
 [ext_resource type="PackedScene" uid="uid://cb0pv3yas2ay6" path="res://Scenes/player.tscn" id="3_bau8f"]
+[ext_resource type="PackedScene" uid="uid://b3qoifkbilgrk" path="res://Scenes/slime.tscn" id="4_b2o1m"]
+[ext_resource type="PackedScene" uid="uid://cs36x4y4gi5t" path="res://Scenes/bat.tscn" id="4_n32gr"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_uuubw"]
 texture = ExtResource("1_dkkyg")
@@ -738,3 +740,10 @@ position = Vector2(24, 24)
 
 [node name="Camera2D" type="Camera2D" parent="TileMap/Player"]
 zoom = Vector2(10, 10)
+
+[node name="bat" parent="TileMap" instance=ExtResource("4_n32gr")]
+position = Vector2(33, 25)
+
+[node name="slime" parent="TileMap" instance=ExtResource("4_b2o1m")]
+position = Vector2(70, 46)
+scale = Vector2(0.415, 0.415)

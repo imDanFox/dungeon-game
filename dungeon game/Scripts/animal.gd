@@ -1,7 +1,7 @@
 extends CharacterBody2D
 class_name animal
-#types of animals extend from this script ex. sheeps, ducks
-
 #health, experience, level
-	
+#attack, item drops, track player, ondeath(), 
+@export var maxHealth: int = 20
+@export var level: int = 0
 

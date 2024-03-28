@@ -1,5 +1,5 @@
 extends animal
-class_name slime
+class_name bat
 
 var health
 
@@ -14,6 +14,3 @@ func damage(attack: Attack):
 	if health <= 0:
 		queue_free()
 	velocity = (global_position - attack.attack_position).normalized() * attack.knockback
-	
-	
-

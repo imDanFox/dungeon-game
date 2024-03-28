@@ -1,7 +1,14 @@
-[gd_scene load_steps=3 format=3 uid="uid://b3qoifkbilgrk"]
+[gd_scene load_steps=7 format=3 uid="uid://b3qoifkbilgrk"]
 
 [ext_resource type="Script" path="res://Scripts/slime.gd" id="1_5h41s"]
 [ext_resource type="Texture2D" uid="uid://cnilnwggxv6w7" path="res://Assets/Bitlands 1.0/Enemies/Slime/Idle_run_walk/Idle_run_walk.png" id="2_wjxna"]
+[ext_resource type="Script" path="res://Scripts/states/StateMachine.gd" id="3_8dnjn"]
+[ext_resource type="Script" path="res://Scripts/states/EnemyFollow.gd" id="4_vqjth"]
+[ext_resource type="Script" path="res://Scripts/states/EnemyIdle.gd" id="5_3hgtp"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ce4d6"]
+radius = 2.99963
+height = 7.99901
 
 [node name="slime" type="CharacterBody2D"]
 script = ExtResource("1_5h41s")
@@ -10,3 +17,20 @@ script = ExtResource("1_5h41s")
 position = Vector2(0, -8)
 texture = ExtResource("2_wjxna")
 hframes = 4
+
+[node name="Hitbox" type="CollisionShape2D" parent="."]
+position = Vector2(2.93099e-14, -3)
+rotation = 1.55509
+shape = SubResource("CapsuleShape2D_ce4d6")
+
+[node name="StateMachine" type="Node" parent="." node_paths=PackedStringArray("initial_state")]
+script = ExtResource("3_8dnjn")
+initial_state = NodePath("Idle")
+
+[node name="Follow" type="Node" parent="StateMachine" node_paths=PackedStringArray("enemy")]
+script = ExtResource("4_vqjth")
+enemy = NodePath("../..")
+
+[node name="Idle" type="Node" parent="StateMachine" node_paths=PackedStringArray("enemy")]
+script = ExtResource("5_3hgtp")
+enemy = NodePath("../..")
