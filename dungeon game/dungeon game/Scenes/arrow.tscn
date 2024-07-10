@@ -1,0 +1,30 @@
+[gd_scene load_steps=4 format=3 uid="uid://dk6g0wyskj20l"]
+
+[ext_resource type="Script" path="res://Scripts/arrow.gd" id="1_bma2d"]
+[ext_resource type="Texture2D" uid="uid://b32fi5fh727d3" path="res://Assets/arrow.png" id="2_heei5"]
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_y74lq"]
+a = Vector2(3, 0)
+b = Vector2(1.00395, 0)
+
+[node name="arrow" type="Area2D"]
+scale = Vector2(1, 1.02305)
+script = ExtResource("1_bma2d")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-1, 0)
+scale = Vector2(0.5625, 0.5625)
+texture = ExtResource("2_heei5")
+hframes = 4
+frame = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+scale = Vector2(0.996063, 0.854167)
+shape = SubResource("SegmentShape2D_y74lq")
+
+[node name="VisibleOnScreenEnabler2D" type="VisibleOnScreenEnabler2D" parent="."]
+position = Vector2(2, 0)
+scale = Vector2(0.1, 0.1)
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="screen_exited" from="VisibleOnScreenEnabler2D" to="." method="_on_visible_on_screen_enabler_2d_screen_exited"]
